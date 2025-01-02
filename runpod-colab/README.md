@@ -9,7 +9,7 @@ To use this image, set up Tailscale and create an API key. For free users at the
    * TAILSCALE_AUTH_KEY -- the API key you created above. I recommend using your provider's secret management system to store this. Do not publish this value anywhere, as it would allow anyone to connect to your Tailnet.
 
 Once the container has launched, on the machine from which you want to work with Colab notebooks, launch an SSH tunnel with
-`ssh colab -L 9000:localhost:8888`, replacing "colab" with the TAILSCALE_HOST_NAME defined above if you named it differently, and optionally "8888" with a different port that is free on your local machine. Finally, in your Colab notebook, select the dropdown next to "Connect" and go to "Connect to local runtime". Search the container logs for a line that looks like
+`ssh colab -L 8888:localhost:9000`, replacing "colab" with the TAILSCALE_HOST_NAME defined above if you named it differently, and optionally "8888" with a different port that is free on your local machine. Finally, in your Colab notebook, select the dropdown next to "Connect" and go to "Connect to local runtime". Search the container logs for a line that looks like
 ```
 Or copy and paste one of these URLs: (type=jupyter)
 http://127.0.0.1:9000/?token=foo (type=jupyter)
