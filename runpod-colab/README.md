@@ -1,6 +1,6 @@
 Adds [Tailscale](https://tailscale.com/) to [Google's official image](https://us-docker.pkg.dev/colab-images/public/runtime) for [Colab](https://colab.research.google.com/), allowing it to be used as a "local runtime" even when running on a cloud computing provider.
 
-See the Dockerfile definition or fork your own version on [Github](https://github.com/evan-lloyd/mechinterp-dev/tree/main/runpod-colab).
+This image is hosted on [Docker Hub](https://hub.docker.com/repository/docker/elloyd/colab/). See the Dockerfile definition or fork your own version on [Github](https://github.com/evan-lloyd/mechinterp-dev/tree/main/runpod-colab).
 
 To use this image, set up Tailscale and create an API key. For free users at the time of writing, this is under "Settings->Personal Settings->Keys". Make sure that the run configuration on your compute host
 1) Exposes port 9000 and SSH
