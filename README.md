@@ -2,11 +2,6 @@
 Assorted utilities for mechanistic interpretability development.
 
 # [cloud_dev](https://github.com/evan-lloyd/mechinterp-dev/tree/main/clouddev)
-echo "$JUPYTER_TOKEN" > /init/jupyter_token
-echo "$WANDB_API_KEY" > /init/wandb_api_key
-
-if [[ -n "$GOOGLE_DRIVE_CLIENT_ID" && -n "$GOOGLE_DRIVE_CLIENT_SECRET" ]]; then
-
 Docker image for running mechinterp experiments on cloud hardware. Connects to a [Tailscale](https://tailscale.com/) VPN on startup. I use this in combination with [codesync](#codesync) to set up a remote environment that runs my code as if it were on my local network. Configured with the following environment variables:
 * `TAILSCALE_AUTH_KEY`: Generate a reusable ephemeral auth key from the [Tailscale admin console](https://login.tailscale.com/admin/settings/keys). Should be stored as a secret on your cloud provider.
 * `TAILSCALE_HOST_NAME`: Hostname for the machine on your Tailscale VPN.
