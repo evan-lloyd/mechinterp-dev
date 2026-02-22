@@ -1,0 +1,50 @@
+[project]
+name = "base-uv-env"
+version = "0.1.0"
+description = "Base environment for mech-interp-dev cloud_dev"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "accelerate>=1.12.0",
+    "bitarray>=3.8.0",
+    "bitsandbytes>=0.49.2",
+    "cloudpickle>=3.1.2",
+    "datasets>=4.4.2",
+    "jupyter>=1.1.1",
+    "jupyterlab>=4.5.1",
+    "matplotlib>=3.10.8",
+    "ml-dtypes>=0.5.4",
+    "safetensors>=0.7.0",
+    "scipy>=1.17.0",
+    "torch>=2.9.1",
+    "transformers>=4.57.3",
+    "zarr>=3.1.5",
+    "jurigged>=0.6.1",
+    "line-profiler>=5.0.1",
+    "ruff>=0.14.10",
+    "numpy>=2.2.3",
+    "scikit-learn>=1.6.1",
+    "zarr>=3.1.5",
+    "dill>=0.3.8",
+    "seaborn>=0.13.2",
+    "ipympl>=0.9.7",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", marker = "platform_system == 'Darwin'" },
+    { index = "pytorch-cu128", marker = "platform_system != 'Darwin'" },
+]
+
+[tool.ty]
+rules = { all = "warn", missing-argument = "error" }
