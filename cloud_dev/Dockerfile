@@ -3,7 +3,7 @@
 FROM nvidia/cuda:12.8.0-runtime-ubuntu24.04
 
 RUN apt update -y && apt upgrade -y && \
-    DEBIAN_FRONTEND=noninteractive apt install -y wget openssh-server curl git tmux rsync p7zip-full jq
+    DEBIAN_FRONTEND=noninteractive apt install -y wget openssh-server curl git tmux rsync p7zip-full jq vim
 
 RUN wget -O - https://tailscale.com/install.sh | sh
 RUN curl https://rclone.org/install.sh | bash

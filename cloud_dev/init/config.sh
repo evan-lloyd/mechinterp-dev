@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "$JUPYTER_TOKEN" > /init/jupyter_token
 echo "$WANDB_API_KEY" > /init/wandb_api_key
+echo "$HF_TOKEN" > /init/hf_token
 
 if [[ -n "$GOOGLE_DRIVE_CLIENT_ID" && -n "$GOOGLE_DRIVE_CLIENT_SECRET" ]]; then
     mkdir /root/.config/rclone
